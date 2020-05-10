@@ -37,7 +37,7 @@ public class CartaoCredito implements Serializable {
 	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name = "cliente_id")
-	private Cliente cliente;
+	private Pessoa cliente;
 
 	@JsonIgnore
 	@OneToMany(mappedBy = "cartaoCredito")
@@ -49,7 +49,7 @@ public class CartaoCredito implements Serializable {
 
 	public CartaoCredito(Integer id, String bandeira, String numeroCartao, String codSeguranca,
 			Double limiteDisponivelTotal, Double limiteDisponivelAtual, Double limiteDisponivelParaSaque,LocalDate dataValidade,
-			Cliente cliente) {
+			Pessoa cliente) {
 		super();
 		this.id = id;
 		this.bandeira = bandeira;
@@ -126,7 +126,7 @@ public class CartaoCredito implements Serializable {
 		this.limiteDisponivelParaSaque = limiteDisponivelParaSaque;
 	}
 
-	public Cliente getCliente() {
+	public Pessoa getPessoa() {
 		return cliente;
 	}
 

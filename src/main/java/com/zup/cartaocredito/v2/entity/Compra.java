@@ -37,8 +37,8 @@ public class Compra implements Serializable {
 	
 	@JsonIgnore
 	@ManyToOne
-	@JoinColumn(name = "usuario_id")
-	private Cliente cliente;
+	@JoinColumn(name = "cliente_id")
+	private Pessoa cliente;
 	
 	@ManyToOne
 	@JoinColumn(name = "cartao_id")
@@ -49,7 +49,7 @@ public class Compra implements Serializable {
 	}
 
 	public Compra(Integer id, LocalDate dataCompra, Integer status, Double valor, Integer qtdeParcela, Loja loja,
-			Cliente cliente, CartaoCredito cartaoCredito) {
+			Pessoa cliente, CartaoCredito cartaoCredito) {
 		super();
 		this.id = id;
 		this.dataCompra = dataCompra;
@@ -129,7 +129,7 @@ public class Compra implements Serializable {
 		this.loja = loja;
 	}
 
-	public Cliente getCliente() {
+	public Pessoa getCliente() {
 		return cliente;
 	}
 
